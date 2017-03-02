@@ -1,0 +1,394 @@
+@charset "UTF-8";
+/**
+  EDgrid es una librería CSS para construir layouts con Responsive Web Design
+  Importe este archivo en su proyecto para empezar a usarlo
+**/
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.ed-container, header .topContent, .banner {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.ed-item, header .topContent .topLogo, header .topContent .topMenu, .bannerCopy, .bannerSignup {
+  margin: 0;
+  padding-left: 0.9375em;
+  padding-right: 0.9375em;
+}
+
+.ed-item {
+  width: 100%;
+}
+
+.ed-item.ed-container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/*
+| Mixin para crear cuadriculas
+|
+| $selector: nombre del selector CSS de cada item de la cuadricula
+|
+| $gutter: separación entre cada item de la cuadricula (opcional)
+|
+*/
+header {
+  height: 4em;
+  background: #fff;
+  border-bottom: 1px solid #CECECE;
+}
+
+header .topContent {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-height: 4em;
+}
+
+header .topContent .topLogo {
+  width: 80%;
+}
+
+@media screen and (min-width: 640px) {
+  header .topContent .topLogo {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  header .topContent .topLogo {
+    width: 40%;
+  }
+}
+
+header .topContent .topLogo__link__img {
+  height: 60px;
+  width: auto;
+  margin: 2px 0;
+  display: block;
+}
+
+header .topContent .topMenu {
+  width: 20%;
+}
+
+@media screen and (min-width: 640px) {
+  header .topContent .topMenu {
+    width: 30%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  header .topContent .topMenu {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  header .topContent .topMenu__nav {
+    position: fixed;
+    transition: all .3s;
+    height: 100vh;
+    z-index: 200;
+    overflow-y: auto;
+    width: 85%;
+    right: -85%;
+  }
+  header .topContent .topMenu__nav.show-menu {
+    right: 0;
+  }
+}
+
+header .topContent .topMenu__nav__menu, header .topContent .topMenu__nav__menu ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+header .topContent .topMenu__nav__menu li {
+  position: relative;
+  list-style: none;
+  -webkit-flex: auto;
+      -ms-flex: auto;
+          flex: auto;
+}
+
+header .topContent .topMenu__nav__menu li.parent-submenu {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+header .topContent .topMenu__nav__menu li.parent-submenu a {
+  -webkit-flex: auto;
+      -ms-flex: auto;
+          flex: auto;
+}
+
+header .topContent .topMenu__nav__menu ul {
+  display: none;
+}
+
+@media screen and (max-width: 1023px) {
+  header .topContent .topMenu__nav__menu ul.show-submenu {
+    display: block;
+    width: 100%;
+    -webkit-order: 3;
+        -ms-flex-order: 3;
+            order: 3;
+    margin-left: 1em;
+    margin-bottom: .5em;
+  }
+}
+
+header .topContent .topMenu__nav__menu a {
+  display: block;
+  line-height: 4em;
+  padding: 0 1em;
+}
+
+header .topContent .topMenu__nav__menu a:hover {
+  text-decoration: none;
+}
+
+@media screen and (min-width: 1024px) {
+  header .topContent .topMenu__nav__menu {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header .topContent .topMenu__nav__menu a {
+    text-align: center;
+  }
+  header .topContent .topMenu__nav__menu .expand {
+    display: none;
+  }
+  header .topContent .topMenu__nav__menu ul {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    min-width: 100%;
+    white-space: nowrap;
+  }
+  header .topContent .topMenu__nav__menu ul a {
+    text-align: left;
+  }
+  header .topContent .topMenu__nav__menu ul ul {
+    top: 0;
+    left: 100%;
+  }
+  header .topContent .topMenu__nav__menu li:hover > ul {
+    display: block;
+  }
+}
+
+header .topContent .topMenu__nav__menu .expand-submenu {
+  position: relative;
+  right: 0;
+  width: 3em;
+  height: 3em;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+@media screen and (min-width: 1024px) {
+  header .topContent .topMenu__nav__menu .expand-submenu {
+    display: none;
+  }
+}
+
+header .topContent .topMenu__nav__menu .expand-submenu::after {
+  content: "";
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  top: 20%;
+  left: 30%;
+  border-left: 0.45em solid;
+  border-bottom: 0.45em solid;
+  border-radius: 0.24em;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  transition: all .3s;
+}
+
+header .topContent .topMenu__nav__menu .expand-submenu.active {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+header .topContent .topMenu__nav__menu__item {
+  position: relative;
+  transition: .5s all;
+}
+
+header .topContent .topMenu__nav__menu__item.singin, header .topContent .topMenu__nav__menu__item.singup {
+  text-align: center;
+}
+
+header .topContent .topMenu__nav__menu__item.singin:before, header .topContent .topMenu__nav__menu__item.singup:before {
+  display: none;
+}
+
+header .topContent .topMenu__nav__menu__item:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #004E79;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transition: all .3s;
+}
+
+header .topContent .topMenu__nav__menu__item:hover:before {
+  width: 100%;
+  left: 0;
+}
+
+header .topContent .topMenu__nav__menu__item__link {
+  color: #006AA3;
+  transition: .5s all;
+}
+
+header .topContent .topMenu__nav__menu__item__link.singin, header .topContent .topMenu__nav__menu__item__link.singup {
+  display: inline;
+  padding: 5px 20px;
+  border-radius: 50px;
+}
+
+header .topContent .topMenu__nav__menu__item__link.singin {
+  border: 1.5px solid #006AA3;
+}
+
+header .topContent .topMenu__nav__menu__item__link.singin:hover {
+  background: #006AA3;
+  color: #fff;
+}
+
+header .topContent .topMenu__nav__menu__item__link.singup {
+  background: linear-gradient(#006AA3, #004970);
+  color: #fff;
+  transition: none;
+}
+
+header .topContent .topMenu__nav__menu__item__link.singup:hover {
+  background: #006AA3;
+  color: #fff;
+}
+
+header .topContent .topMenu__nav__menu__item__link:hover {
+  color: #004E79;
+}
+
+.banner {
+  height: calc(100vh - 4em);
+}
+
+.bannerCopy {
+  width: 100%;
+  text-align: center;
+  color: #004E79;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.bannerCopy__sub-title {
+  font-weight: 300;
+  margin: 0;
+  font-size: 1em;
+}
+
+.bannerCopy__title {
+  font-weight: 600;
+  margin: 0;
+  font-size: 3em;
+  display: block;
+}
+
+.bannerSignup {
+  width: 50%;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 640px) {
+  .bannerSignup {
+    width: 15%;
+  }
+}
+
+.bannerSignup__btn {
+  display: block;
+  line-height: 2.5em;
+  text-align: center;
+  border-radius: 3px;
+  background: #00E0F9;
+  box-shadow: 2px 4px 4px #CECECE;
+  transition: .3s all;
+  color: #fff;
+  text-shadow: 1px 2px 3px #1a1a1a;
+}
+
+.bannerSignup__btn:hover {
+  text-decoration: none;
+  background: #00b2c6;
+  box-shadow: 1px 2px 4px #CECECE;
+  text-shadow: 1px 2px 3px #9b9b9b;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}

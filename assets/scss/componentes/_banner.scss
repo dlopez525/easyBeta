@@ -1,0 +1,54 @@
+// background: url(../img/bannerHeader.jpeg) center / cover;
+.banner {
+  @include edContainer();
+  height: calc(100vh - 4em);
+
+  &Copy {
+    @include edItem(100,100,100);
+    text-align: center;
+    color: $primary-hover;
+
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__sub-title {
+      font-weight: $fLightOs;
+      margin: 0;
+      font-size: 1em;
+    }
+
+    &__title {
+      font-weight: $fSemiBoldOs;
+      margin: 0;
+      font-size: 3em;
+      display: block;
+    }
+  }
+
+  &Signup {
+    @include edItem(50,15,15);
+    margin: 0 auto;
+
+    &__btn {
+      display: block;
+      line-height: 2.5em;
+      text-align: center;
+      border-radius: 3px;
+
+      background: $secondary;
+      box-shadow: 2px 4px 4px $gris;
+      transition: .3s all;
+      color: $white;
+      text-shadow: 1px 2px 3px lighten($black, 10%);
+
+      &:hover {
+        text-decoration: none;
+        background: darken($secondary, 10%);
+        box-shadow: 1px 2px 4px $gris;
+        text-shadow: 1px 2px 3px darken($gris, 20%);
+      }
+    }
+  }
+}

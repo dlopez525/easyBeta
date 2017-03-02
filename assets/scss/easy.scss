@@ -1,0 +1,33 @@
+// @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Oswald:300,600');
+//Variables Globales
+$cssCore: false;
+$cssHelpers: false;
+$devMode: false;
+
+//Variables Específicas
+$bp-menu: l;
+
+//Variables de Fuentes Open Sans
+$fNormalO: 400;
+$fSemiBoldO: 600;
+$fBoldO: 700;
+
+//Variables de Fuentes Oswald
+$fLightOs: 300;
+$fSemiBoldOs: 600;
+
+//Colores
+$white: #fff;
+$black: #000;
+$primary: #006AA3;
+$primary-hover: #004E79;
+$secondary: #00E0F9;
+$gris: #CECECE;
+
+@import "ed-grid/ed-grid";
+@import "componentes/top";
+@import "componentes/banner";
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
