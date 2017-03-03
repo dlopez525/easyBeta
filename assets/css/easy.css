@@ -26,7 +26,7 @@ a:hover {
   text-decoration: underline;
 }
 
-.ed-container, header .topContent, .banner, .paraEstudiantes, .paraEstudiantes__caracteristicas, .paraEstudiantes .autor, .paraProfesores, .paraProfesores__caracteristicas, .paraProfesores .autor {
+.ed-container, header .topContent, .banner, .paraEstudiantes, .paraEstudiantes__caracteristicas, .paraEstudiantes .autor, .paraProfesores, .paraProfesores__caracteristicas, .paraProfesores .autor, footer .main-footer {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -39,7 +39,7 @@ a:hover {
   width: 100%;
 }
 
-.ed-item, header .topContent .topLogo, header .topContent .topMenu, .bannerCopy, .bannerSignup, .paraEstudiantes__titulo, .paraEstudiantes__caracteristicas__item, .paraEstudiantes .autor__iconos, .paraProfesores__titulo, .paraProfesores__caracteristicas__item, .paraProfesores .autor__iconos {
+.ed-item, header .topContent .topLogo, header .topContent .topMenu, .bannerCopy, .bannerSignup, .paraEstudiantes__titulo, .paraEstudiantes__caracteristicas__item, .paraEstudiantes .autor__iconos, .paraProfesores__titulo, .paraProfesores__caracteristicas__item, .paraProfesores .autor__iconos, footer .main-footer__logo {
   margin: 0;
   padding-left: 0.9375em;
   padding-right: 0.9375em;
@@ -631,6 +631,33 @@ body {
   color: #006AA3;
   font-size: 11px;
   letter-spacing: .2;
+}
+
+footer {
+  background: #00283d;
+}
+
+footer .main-footer {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer .main-footer__logo {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+footer .main-footer__copy {
+  color: #fff;
+  font-size: 14px;
+  opacity: .5;
 }
 
 body {
