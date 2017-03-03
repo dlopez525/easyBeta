@@ -26,7 +26,7 @@ a:hover {
   text-decoration: underline;
 }
 
-.ed-container, header .topContent, .banner, .paraEstudiantes, .paraEstudiantes__caracteristicas, .paraEstudiantes .autor {
+.ed-container, header .topContent, .banner, .paraEstudiantes, .paraEstudiantes__caracteristicas, .paraEstudiantes .autor, .paraProfesores, .paraProfesores__caracteristicas, .paraProfesores .autor {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -39,7 +39,7 @@ a:hover {
   width: 100%;
 }
 
-.ed-item, header .topContent .topLogo, header .topContent .topMenu, .bannerCopy, .bannerSignup, .paraEstudiantes__titulo, .paraEstudiantes__caracteristicas__item, .paraEstudiantes .autor__iconos {
+.ed-item, header .topContent .topLogo, header .topContent .topMenu, .bannerCopy, .bannerSignup, .paraEstudiantes__titulo, .paraEstudiantes__caracteristicas__item, .paraEstudiantes .autor__iconos, .paraProfesores__titulo, .paraProfesores__caracteristicas__item, .paraProfesores .autor__iconos {
   margin: 0;
   padding-left: 0.9375em;
   padding-right: 0.9375em;
@@ -506,6 +506,128 @@ body {
 }
 
 .paraEstudiantes .autor__iconos a {
+  color: #006AA3;
+  font-size: 11px;
+  letter-spacing: .2;
+}
+
+.paraP {
+  background: #fff;
+  padding: 3em 0;
+}
+
+.paraProfesores__titulo {
+  width: 100%;
+  text-align: center;
+}
+
+.paraProfesores__titulo h2 {
+  color: #006AA3;
+  margin: 0;
+  padding: 0;
+}
+
+.paraProfesores__titulo h2 span {
+  color: #004E79;
+}
+
+.paraProfesores__titulo p {
+  color: #006AA3;
+  margin: 0;
+  padding: 0;
+  line-height: .9;
+}
+
+.paraProfesores__caracteristicas {
+  margin: 2.5em 0;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  margin-left: -12.5px;
+  margin-right: -12.5px;
+}
+
+.paraProfesores__caracteristicas img {
+  display: block;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.paraProfesores__caracteristicas > .paraProfesores__caracteristicas__item {
+  width: calc(100% - 25px);
+  margin: 12.5px;
+}
+
+@media screen and (min-width: 640px) {
+  .paraProfesores__caracteristicas > .paraProfesores__caracteristicas__item {
+    width: calc(50% - 25px);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .paraProfesores__caracteristicas > .paraProfesores__caracteristicas__item {
+    width: calc(25% - 25px);
+  }
+}
+
+.paraProfesores__caracteristicas__item {
+  width: 100%;
+  border: 1px solid #0aa9ff;
+  border-radius: 3px;
+  background: #effaff;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+@media screen and (min-width: 640px) {
+  .paraProfesores__caracteristicas__item {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .paraProfesores__caracteristicas__item {
+    width: 25%;
+  }
+}
+
+.paraProfesores__caracteristicas__item__descripcion {
+  color: #333333;
+  font-size: 15px;
+  border-top: 1px solid gray;
+}
+
+.paraProfesores__caracteristicas__item__btn {
+  display: block;
+  background: #00E0F9;
+  color: #fff;
+  line-height: 2;
+  border-radius: 3px;
+  transition: .5s all;
+}
+
+.paraProfesores__caracteristicas__item__btn:hover {
+  text-decoration: none;
+  background: #00b2c6;
+}
+
+.paraProfesores .autor__iconos {
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.paraProfesores .autor__iconos a {
   color: #006AA3;
   font-size: 11px;
   letter-spacing: .2;
